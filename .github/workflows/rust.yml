@@ -1,0 +1,26 @@
+name: repr
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  rust:
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - run: curl https://sh.rustup.rs -sSf | sh -s -- --profile minimal -y
+      - run: cargo test
+
