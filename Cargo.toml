@@ -1,0 +1,13 @@
+[package]
+name = "repr"
+version = "0.1.0"
+authors = ["Zach Shipko <zachshipko@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+repr-derive = {path = "./derive", version = "0.1"}
+
+[workspace]
+members = [
+  "derive"
+]
