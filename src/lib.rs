@@ -384,7 +384,7 @@ impl<'a> Type for Bytes<'a> {
 
 #[cfg(test)]
 mod tests {
-    use crate::{Str, Type};
+    use crate::Type;
 
     mod irmin {
         pub use crate::Type;
